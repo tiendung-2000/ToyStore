@@ -15,48 +15,41 @@
 
 <body>
   {{!-- header --}}
-  <div class="header">
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <div class="container-fluid">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="mynavbar">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/" style="color: white; font-weight:bold">HOME</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
 
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">ATN Shop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+      <ul class="navbar-nav p-1">
+        <li class="nav-item text-light"><a class="nav-link" href="/">HOME</a></li>
+      </ul>
+    </div>
+  </nav>
   <div class="container">
     <h1>Add Product</h1>
     <form action="/insert" method="post">
-    
       <h5>Product Name</h5>
       <div class="input-group mb-3">
         <input type="text" name="txtName" id="txtName" class="form-control" aria-label="Default"
           aria-describedby="inputGroup-sizing-default">
         <label style="color: red;">{{nameError}}</label>
       </div>
-
       <h5>Price</h5>
       <div class="input-group mb-3">
         <input type="text" name="txtPrice" class="form-control" aria-label="Default"
           aria-describedby="inputGroup-sizing-default">
         <label style="color: red;">{{priceError}}</label>
       </div>
-
       <h5>Category</h5>
       <div class="input-group mb-3">
         <input type="text" name="txtCategory" class="form-control" aria-label="Default"
           aria-describedby="inputGroup-sizing-default">
         <label style="color: red;">{{categoryError}}</label>
       </div>
-
       <h5>Image Url</h5>
       <div class="input-group mb-3">
         <input type="text" name="txtImage" id="txtImage" class="form-control" aria-label="Default"
@@ -71,7 +64,7 @@
 
   <div class="footer">
     <footer class="container-fluid text-center">
-      <span class="footer-copyright">OnePice Shop © Copyright 2021. All Rights Reserved.</span>
+      <span class="footer-copyright">ATN SHOP © Copyright 2021. All Rights Reserved.</span>
     </footer>
 
 

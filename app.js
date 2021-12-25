@@ -27,12 +27,11 @@ app.post('/insert', async (req, res) => {
     const price = req.body.txtPrice
     const url = req.body.txtImage
     const category = req.body.txtCategory
-    if (url.length == 0) {
-        var result = await getAll("Products")
-        res.render('insert', { products: result, urlError: 'Phai nhap Image URL!' })
-    }
-    else if (name.trim().length == 0) {
+    if (name.trim().length == 0) {
         res.render('insert', { nameError: "You not input Name!" })
+    }
+    else if (price.trim().length == 0) {
+        res.render('insert', { nameError: null, priceError: "You not input Price!" })
     }
     //check not number
     else if (isNaN(price)) {
@@ -40,12 +39,16 @@ app.post('/insert', async (req, res) => {
         return false;
     };
     //check not input negative numbers
-    if (price < 1 && price > 8) {
-        res.render('insert', { nameError: null, priceError: "Price greater than 0 and smaller 8" });
+    if (isNaN(price) < 1) {
+        res.render('insert', { nameError: null, priceError: "Price greater than 0" });
         return false;
     }
     else if (category.trim().length == 0) {
         res.render('insert', { categoryError: "you must enter a category" })
+    }
+    else if (url.length == 0) {
+        var result = await getAll("Products")
+        res.render('insert', { products: result, urlError: 'Phai nhap Image URL!' })
     }
     else {
 
@@ -105,8 +108,8 @@ app.post('/update', async (req, res) => {
         res.render('edit', { nameError: null, priceError: "Only Number" })
         return false;
     }
-    else if (price < 1 && price > 8) {
-        res.render('edit', { nameError: null, priceError: "Price greater than 0 and smaller 8" })
+    else if (isNaN(price) < 1) {
+        res.render('edit', { nameError: null, priceError: "Price greater than 0" })
         return false;
     }
     else if (category.trim().length == 0) {
