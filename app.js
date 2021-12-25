@@ -94,15 +94,28 @@ app.post('/update', async (req, res) => {
     const image = req.body.txtImage
     const category = req.body.txtCategory
     let updateValues = { $set: { name: name, price: price, category: category, image: image } };
-    if (image.endsWith('png') == false) {
 
-        res.render('edit', { errorLink: 'enter link again!!' })
+    if (name.trim().length == 0) {
+        res.render('edit', { nameError: "You not input Name!" })
+    }
+    else if (price.trim().length == 0) {
+        res.render('edit', { nameError: null, priceError: "You not input Number!" })
+    }
+    else if (isNaN(price)) {
+        res.render('edit', { nameError: null, priceError: "Only Number" })
+        return false;
+    }
+    else if (price < 1 && price > 8) {
+        res.render('edit', { nameError: null, priceError: "Price greater than 0 and smaller 8" })
+        return false;
+    }
+    else if (category.trim().length == 0) {
+        res.render('edit', { nameError: null, priceError: null, categoryError: "you must enter a category" })
     }
     else {
         await updateDocument(id, updateValues, "Products")
         res.redirect('/')
     }
-
 })
 
 
