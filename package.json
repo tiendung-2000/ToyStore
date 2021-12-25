@@ -1,0 +1,30 @@
+{
+  "name": "atnshop",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NamHien01/atnshop1.git"
+  },
+  "author": "Tiến Nam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NamHien01/atnshop1/issues"
+  },
+  "homepage": "https://github.com/NamHien01/atnshop1#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "bootstrap": "^5.1.3",
+    "express": "^4.17.2",
+    "hbs": "^4.2.0",
+    "jquery": "^3.6.0",
+    "mongodb": "^4.2.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.14"
+  },
+  "description": ""
+}
