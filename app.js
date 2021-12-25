@@ -39,7 +39,7 @@ app.post('/insert', async (req, res) => {
         return false;
     };
     //check not input negative numbers
-    if (isNaN(price) < 1) {
+    if (price < 1) {
         res.render('insert', { nameError: null, priceError: "Price greater than 0" });
         return false;
     }
@@ -108,7 +108,7 @@ app.post('/update', async (req, res) => {
         res.render('edit', { nameError: null, priceError: "Only Number" })
         return false;
     }
-    else if (isNaN(price) < 1) {
+    else if (price < 1) {
         res.render('edit', { nameError: null, priceError: "Price greater than 0" })
         return false;
     }
