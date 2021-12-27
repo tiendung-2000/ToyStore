@@ -1,5 +1,5 @@
 {
-  "name": "atnshop",
+  "name": "ToyStore",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NamHien01/atnshop1.git"
+    "url": "git+https://github.com/tiendung-2000/ToyStore"
   },
-  "author": "Tiến Nam",
+  "author": "Ngo Tien Dung",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NamHien01/atnshop1/issues"
+    "url": "https://github.com/tiendung-2000/ToyStore/issues"
   },
-  "homepage": "https://github.com/NamHien01/atnshop1#readme",
+  "homepage": "https://github.com/tiendung-2000/ToyStore#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "bootstrap": "^5.1.3",
